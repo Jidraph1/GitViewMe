@@ -1,0 +1,49 @@
+.container-fluid {
+    margin: 0 auto;
+}
+
+
+.binoculars {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    padding-bottom: 5px;
+}
+
+.search-space {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.search-btn {
+    width: 20%;
+    margin-top: 1%;
+    
+}
+
+.search-btn:hover {
+    background-color: white !important;
+    color: black;
+    transition: 200ms;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 70%;
+}
+
+
+.results-section {
+    font-family: 'Lato';
+    font-size: smaller;
+    
+}
+.card {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    
+}

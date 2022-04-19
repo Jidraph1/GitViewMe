@@ -1,1 +1,46 @@
-<p>search works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="form-group text-center col-lg-6 col-md-6 col-sm-12">
+        
+        <img class="binoculars" src="https://icon-library.com/images/binoculars-vector-icon/binoculars-vector-icon-6.jpg"
+          alt="" srcset="">
+        <form>
+          <div>
+            <input class="search-space form-control" placeholder="GitHub Username" name="username" autocompletetype="text" [(ngModel)] = "username">
+            <button (click)="search()" class="btn btn-dark search-btn" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 results-section" *ngIf="user">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top avatar" src="{{user.avatar_url}}" alt="Card image cap">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <h5 class="user-name card-text mt-3"><strong>{{user.name}}</strong></h5>
+                  <p class="text-muted mt-4"><span>{{user.public_repos}}</span> Repositories</p>
+                  <p class="text-muted mt-4">Joined <span>{{user.created_at | date : 'longDate'}}</span></p>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <h6> <strong> Repositories</strong></h6>
+            <div *ngFor="let repo of repos" class="card card-body" style="width: 18rem;">
+      
+               <a href="{{repo.html_url}}" target="_blank">
+                {{repo.name}}</a>
+  
+                <p>{{ repo.description }}</p>
+                <p class="text-muted">Created {{ repo.created_at | date : 'longDate'}}</p>
+        
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

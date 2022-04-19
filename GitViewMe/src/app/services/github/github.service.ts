@@ -16,10 +16,10 @@ export class GithubService {
   constructor(private httpClient: HttpClient) {
    }
 
-   getUser(): Promise<User>{
-    return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
-    . firstValueFrom(this.username);
-  }
+  //  getUser(): Promise<User>{
+  //   return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
+  //   . firstValueFrom(this.username);
+  // }
 
   getRepos(): Promise<Repo[]>{
     return this.httpClient.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')

@@ -14,3 +14,9 @@ The sole author of the project is Jidraph Kimachia.
 ## Setup Instructions
 
 The project is on a website, and can be accessed by any device of choice. No installation is needed.
+
+License
+Mit License
+
+Further help
+To get more help on the Angular CLI use ng help or go check out the Angular CLI Overview and Command Reference page.

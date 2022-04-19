@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { User } from './../../models/user';
 import { Repo } from 'src/app/models/repo';
-import { lastValueFrom } from 'rxjs;
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class GithubService {
 
    getUser(): Promise<User>{
     return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
-    .lastValueFrom();
+    . firstValueFrom(this.username);
   }
 
   getRepos(): Promise<Repo[]>{

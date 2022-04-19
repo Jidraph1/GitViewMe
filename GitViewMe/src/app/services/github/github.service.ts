@@ -21,9 +21,9 @@ export class GithubService {
   //   . firstValueFrom(this.username);
   // }
 
-  getRepos(): Promise<Repo[]>{
-    return this.httpClient.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')
-    .toPromise();
+  // getRepos(): Promise<Repo[]>{
+  //   return this.httpClient.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')
+  //   .toPromise();
   }
 
   updateUsername(username: string) {

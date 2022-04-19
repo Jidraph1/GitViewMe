@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { User } from './../../models/user';
 import { Repo } from 'src/app/models/repo';
@@ -13,17 +14,19 @@ export class GithubService {
   private username: string = "Jidraph1";
 
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private http: HttpClient) {
    }
 
-  //  getUser(): Promise<User>{
-  //   return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
-  //   . firstValueFrom(this.username);
-  // }
+   getUser() {
+    return this.http.get(`https://api.github.com/users/${this.username}`)
+  .subscribe
+  }
 
-  // getRepos(): Promise<Repo[]>{
-  //   return this.httpClient.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')
-  //   .toPromise();
+  getRepos() {
+    return this.http.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')
+    .subscribe
+
+    // lastValueFrom
   }
 
   updateUsername(username: string) {

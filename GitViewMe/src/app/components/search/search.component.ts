@@ -39,6 +39,15 @@ export class SearchComponent implements OnInit {
 }
 )
 
+
+    // this.githubService.updateUsername(this.username);
+
+    // this.githubService.getUser().then(user => {
+    //   this.user = user;
+    // })
+    // this.githubService.getRepos().then(repos => {
+    //   this.repos = repos;
+    // })
    }
   
 }

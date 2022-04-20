@@ -10,6 +10,9 @@ import { Repo } from 'src/app/models/repo';
   providedIn: 'root'
 })
 export class GithubService {
+  repos(username: any) {
+    throw new Error('Method not implemented.');
+  }
 
   private username: string = "Jidraph1";
 

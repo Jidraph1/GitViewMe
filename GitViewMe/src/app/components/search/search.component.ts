@@ -21,15 +21,24 @@ export class SearchComponent implements OnInit {
   }
 
    search(){
+ this.githubService.getUser(this.username).subscribe(function(response) {
+   console.log(response)
+   
+ }
+ ,function(error){
+   console.log(error)
+ }
+ )
 
-    this.githubService.updateUsername(this.username);
+ this.githubService.getRepos(this.username).subscribe(function(response) {
+  console.log(response)
+  
+}
+,function(error){
+  console.log(error)
+}
+)
 
-    this.githubService.getUser().then(user => {
-      this.user = user;
-    })
-    this.githubService.getRepos().then(repos => {
-      this.repos = repos;
-    })
    }
   
 }

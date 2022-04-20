@@ -14,17 +14,21 @@ export class GithubService {
   private username: string = "Jidraph1";
 
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
    }
 
-   getUser() {
-    return this.http.get(`https://api.github.com/users/${this.username}`)
-  .subscribe
+   getUser(username : string){
+    return this.httpClient.get(`https://api.github.com/users/${username}`)
+
+    // return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
+    // .toPromise();
   }
 
-  getRepos() {
-    return this.http.get<Repo[]>('https://api.github.com/users/' + this.username+'/repos')
-    .subscribe
+  getRepos(username : string){
+    return this.httpClient.get('https://api.github.com/users/' + this.username+'/repos')
+    
+    // return this.httpClient.get<User>(`https://api.github.com/users/${this.username}`)
+    // .toPromise();
 
     // lastValueFrom
   }
